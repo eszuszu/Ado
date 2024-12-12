@@ -1,3 +1,9 @@
+/* !IMPORTANT ~~~~~THIS IS ONLY A SCAFFOLDING REPRESENTATIVE OF MY INITIAL THOUGHT PROCESS*/
+
+/*IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT*/
+
+//This is not to be confused with the rest of the project. All of my early iterations and design patterns,
+//before learning more and diving in. All files/code in the directory ./earlyArchOutline is just that, DON'T USE.
 //Primary HTML semantic and base component, AdoBaseHtmlComponent
 
 class AdoBaseHtmlComponent {
