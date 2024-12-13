@@ -29,8 +29,8 @@
 Currently, the project is under active development and has no installation package yet. Feel free to clone the repo and experiment with the modules.
 
 ```bash
-git clone https://github.com/eszuszu/project-ado
-cd project-ado
+git clone https://github.com/eszuszu/Ado
+cd Ado
 ```
 ### Usage
 You can import the modules into your project and use them as needed. Here's a quick example:
