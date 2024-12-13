@@ -1,26 +1,32 @@
+# IDE and environment files
 .vscode/
 
+# Environment variable files
 .env
 .env.*
 
+# Log files
 *.log
 
+# Temporary or build files
 .tmp/
+dist/
+build/
 
-package-lock.json
-yarn.lock
-
-/dist/
-/build/
-
+# Misc system files
 .history
 .bash_history
 
+# Sensitive information
 .secrets
-
 config/*.secrets
 
+# Node modules
 /node_modules
 
+# OS-specific files
 .DS_Store
-Thumbs.dbearlyArchOutline/
+Thumbs.db
+
+# Hidden folders or directories
+earlyArchOutline/
