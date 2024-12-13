@@ -23,7 +23,7 @@
 
 ## Getting Started
 
-  > tip: start with BaseHTML.js and StateManager.js, create handlers/reducers to subscribe to StateManager or use one of the other modules as a starting point for context specific handling.
+  > **Tip**: start with `BaseHTML.js` and `StateManager.js` for foundational functionality, create handlers/reducers to subscribe to StateManager or use one of the other modules as a starting point for context specific handling.
 
 ### Installation
 Currently, the project is under active development and has no installation package yet. Feel free to clone the repo and experiment with the modules.
@@ -35,15 +35,15 @@ cd project-ado
 ### Usage
 You can import the modules into your project and use them as needed. Here's a quick example:
 
-  >example: Using BaseHTML.js and StateManager.js
+  > **Example**: Using BaseHTML.js and StateManager.js
   ```javascript
-  import BaseHTML from './BaseHTML.js;
+  import BaseHTML from './BaseHTML.js';
   import StateManager from './StateManager.js';
 
   // Initialize a StateManager instance
   const state = new StateManager();
   
-  //Create a BaseHTML instance to manage a dynamic list
+  //Create a BaseHTML instance to manage a dynamic list, in this case 'single', as we're not targeting a nodeCollection
   const listContainer = new BaseHTML('#listContainer', 'single');
 
   //Subscribe to state changes for the list
@@ -61,6 +61,7 @@ You can import the modules into your project and use them as needed. Here's a qu
       container.appendChild(listItem);
     });
   });
+  
    //Initial list of items
    state.setState({
     items: ['Item 1', 'Item 2', 'Item 3'],
@@ -78,7 +79,7 @@ You can import the modules into your project and use them as needed. Here's a qu
     });
    });
    ```
-  >Make sure the following HTML structure is set up for the example to work:
+  > **Make sure the following HTML structure is set up for the example to work**:
    ```HTML
   <div id="app">
     <ul id="listContainer"></ul>
@@ -116,9 +117,11 @@ You can import the modules into your project and use them as needed. Here's a qu
   - Develop installation instructions for npm or other package managers.
 
 ### Future Goals
+  - Implement unit tests for core modules using a testing library (e.g., Jest, Mocha).
   - Adapt modules for compatibility with server-side rendering (SSR) and hydration.
   - Investigate integration with popular frameworks (e.g., React, Next.js).
   - Enhance support for rendering workflows utiling Canvas, WebGL, and other rendering pipelines.
+  - Add a linter (e.g., ESLint) and code formatter (e.g., Prettier) to ensure consistent code style.
 
 ## Contribution
 I welcome feedback, ideas, and contributions from the community!
@@ -136,6 +139,8 @@ This project is licensed under the MIT License
 ## Acknowledgements
   - Thank you to the open-source community for inspiring this project.
   - Special thanks to everyone who provides feedback or contributes
+  - This project is built as a learning exercise to explore state management, DOM manipulation and animation systems. Concepts such as pub/sub systems and declarative design patterns have influenced the implementation. 
 
 ## Disclaimer
-Project Ado is a work in progress and subject to change. While it’s actively being developed, please use it at your own risk. Feel free to reach out with any questions or ideas!
+Project Ado is a work in progress and subject to change. While it’s actively being developed, please use it at your own risk. Feel free to reach out with any questions or ideas. Automated tests are not yet fully implemented as it's I'm actively learning—contributions here are welcome.
+

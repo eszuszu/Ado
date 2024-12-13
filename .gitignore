@@ -23,4 +23,4 @@ config/*.secrets
 /node_modules
 
 .DS_Store
-Thumbs.db
+Thumbs.dbearlyArchOutline/
