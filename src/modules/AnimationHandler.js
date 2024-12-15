@@ -1,4 +1,12 @@
-// AnimationHandler.js
+/**
+ * AnimationHandler
+ * Manages and applies animations based on the state.
+ * 
+ * Dependencies:
+ * - StateManager (to subscribe to animation state changes)
+ * - Animation configuration object (defining keyframes options and element selectors)
+ */
+
 
 export default class AnimationHandler {
   /**

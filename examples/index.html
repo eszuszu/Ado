@@ -1,0 +1,72 @@
+<!-- Here is a quick example taken from README.md -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ado Playground</title> 
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1 style="text-align: center; margin-top: 90px">Here is a quick demo~</h1>
+        <div id="app" style="width: 14rem; margin-left: auto; margin-right: auto">
+          <ul id="listContainer"></ul>
+          <button id="addButton">Add Item</button>
+          <!-- You can see how the listContainer changes in your dev tools console -->
+           <p>Open your development console to view how the <b>'listContainer'</b> element changes.</p>
+           <!-- Try making a button that rolls back the listContainer to a "previous" state -->
+        </div>
+    </section>
+  </main>
+</body>
+
+</html>
+
+<script type="module">
+  import { BaseHTML, StateManager } from '../src/modules/index.js'
+
+  console.log('This example illustrates the basics,\nThe StateManager object will be logged once the "Add Item" button is pressed the first time—\nToggle the dropdown properties of #state and #subscribers to inspect.')
+
+    // Initialize a StateManager instance
+    const state = new StateManager();
+
+    /*Create a BaseHTML instance to manage a dynamic list,
+    in this case 'single' as we're not targeting a nodeCollection but a single element.*/
+    const listContainer = new BaseHTML('#listContainer', 'single');
+
+    //Subscribe to state changes for the list
+    state.subscribe('items', (items) => {
+      // Re-render the list whenever the state updates—
+      const container = listContainer.getSelection();
+
+      //Clear the container
+      container.innerHTML = '';
+
+      //Populate the list with new items
+      items.forEach((item) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        container.appendChild(listItem);
+      });
+    });
+
+    //Initial list of items
+    state.setState({
+      items: ['Item 1', 'Item 2', 'Item 3'],
+    });
+
+    const addButton = new BaseHTML('#addButton', 'single');
+    addButton.getSelection().addEventListener('click', () => {
+      //Get the current items from the state
+      const currentItems = state.getState('items');
+      //Log the state to the console to see how the state instance is updating
+      console.log(state);
+      //Add a new item
+      const newItem = `Item ${currentItems.length + 1}`;
+      state.setState({
+        items: [...currentItems, newItem],
+      });
+    });
+</script>
